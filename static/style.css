@@ -1,0 +1,163 @@
+/* Root colors */
+:root {
+    --primary-color: #FFD300; /* Yellow Jacket Yellow */
+    --primary-hover: #e6c500; /* Slightly darker yellow on hover */
+    --bg-color: #ffffff;       /* White background */
+    --text-color: #2f2f2f;    /* Dark gray text */
+}
+
+/* Body */
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--bg-color) !important;
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+}
+
+/* Headings */
+h1, h2 {
+    text-align: center;
+    color: var(--text-color);
+    margin-bottom: 20px;
+}
+
+/* Container */
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 15px;
+}
+
+/* Navbar */
+.navbar,
+.navbar-light,
+.navbar-expand-lg {
+    background-color: var(--primary-color) !important; /* yellow */
+}
+
+/* Navbar brand */
+.navbar .navbar-brand {
+    color: var(--text-color) !important;
+}
+
+/* Navbar links */
+.navbar .nav-link {
+    color: var(--text-color) !important;
+}
+.navbar .nav-link:hover,
+.navbar .nav-link:focus {
+    color: var(--primary-hover) !important;
+}
+
+/* Dropdown menu (including when open) */
+.navbar .dropdown-menu,
+.navbar .dropdown-menu.show {
+    background-color: var(--primary-color) !important; /* yellow */
+}
+
+/* Dropdown items */
+.navbar .dropdown-item {
+    color: var(--text-color) !important;
+}
+
+.navbar .dropdown-item:hover,
+.navbar .dropdown-item:focus {
+    background-color: var(--primary-hover) !important; /* darker yellow */
+    color: var(--text-color) !important;
+}
+
+/* Hamburger button background */
+.navbar-toggler {
+    background-color: var(--primary-color) !important; /* yellow background */
+    border: none !important;
+    padding: 5px;
+}
+
+/* Custom hamburger bars */
+.custom-toggler {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+}
+
+.custom-toggler span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background-color: var(--text-color); /* dark gray lines */
+    border-radius: 2px;
+}
+/* Buttons */
+.btn-success {
+    background-color: var(--primary-color) !important;
+    color: var(--text-color) !important;
+    border: none !important;
+}
+
+.btn-success:hover {
+    background-color: var(--primary-hover) !important;
+    color: var(--text-color) !important;
+}
+
+/* Forms */
+form input, form select, form button {
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    color: #000;
+}
+
+/* Cards & sections */
+.section-card {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+/* List groups */
+.list-group-item {
+    font-size: 1rem;
+    padding: 15px 20px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    background-color: #fff;
+    color: #000;
+}
+
+/* Calendar */
+#calendar {
+    max-width: 100%;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+}
+
+/* Centered buttons on homepage */
+.text-center .btn {
+    display: inline-block;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 576px) {
+    h1 { font-size: 1.8rem; }
+    h2 { font-size: 1.4rem; }
+    .navbar-brand { font-size: 1.2rem; }
+    .nav-link { font-size: 0.9rem; }
+    .container { padding: 10px; }
+
+    /* Hamburger bars */
+    .navbar-toggler-icon {
+        height: 3px;
+        background-color: var(--text-color);
+    }
+}

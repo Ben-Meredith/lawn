@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}My Reservations - LawnCare{% endblock %}
+{% block content %}
+<h2>My Reservations</h2>
+{% if reservations %}
+    <ul class="list-group">
+    {% for res in reservations %}
+        <li class="list-group-item">
+            {{ res.date }} at {{ res.time }} - {{ res.address }}
+        </li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>You have no reservations yet.</p>
+{% endif %}
+{% endblock %}

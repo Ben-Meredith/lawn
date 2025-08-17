@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% block title %}Home - LawnCare{% endblock %}
+{% block content %}
+<div class="text-center">
+    <h1>Welcome to Yellow Jacket Lawncare</h1>
+    <p class="lead">Professional lawn mowing in your area. Reliable, fast, and affordable!</p>
+    <a href="{{ url_for('reservations') }}" class="btn btn-success btn-lg">Book a Reservation</a>
+</div>
+
+<!-- Photo carousel (only on homepage) -->
+<div id="photoCarousel" class="carousel slide my-5" data-bs-ride="carousel">
+    <!-- Carousel indicators / dots -->
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#photoCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#photoCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#photoCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        <button type="button" data-bs-target="#photoCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+        <button type="button" data-bs-target="#photoCarousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
+        <button type="button" data-bs-target="#photoCarousel" data-bs-slide-to="5" aria-label="Slide 6"></button>
+        <button type="button" data-bs-target="#photoCarousel" data-bs-slide-to="6" aria-label="Slide 7"></button>
+        <button type="button" data-bs-target="#photoCarousel" data-bs-slide-to="7" aria-label="Slide 8"></button>
+        <button type="button" data-bs-target="#photoCarousel" data-bs-slide-to="8" aria-label="Slide 9"></button>
+        <button type="button" data-bs-target="#photoCarousel" data-bs-slide-to="9" aria-label="Slide 10"></button>
+    </div>
+
+    <!-- Carousel images -->
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="{{ url_for('static', filename='images/IMG_6295.jpg') }}" class="d-block w-100" alt="Photo 1">
+        </div>
+        <div class="carousel-item active">
+            <img src="{{ url_for('static', filename='images/IMG_6297.jpg') }}" class="d-block w-100" alt="Photo 2">
+        </div>
+        <div class="carousel-item active">
+            <img src="{{ url_for('static', filename='images/IMG_6299.jpg') }}" class="d-block w-100" alt="Photo 3">
+        </div>
+        <div class="carousel-item active">
+            <img src="{{ url_for('static', filename='images/IMG_6355.jpg') }}" class="d-block w-100" alt="Photo 4">
+        </div>
+        <div class="carousel-item active">
+            <img src="{{ url_for('static', filename='images/IMG_6389.jpg') }}" class="d-block w-100" alt="Photo 5">
+        </div>
+        <div class="carousel-item active">
+            <img src="{{ url_for('static', filename='images/IMG_6604.jpg') }}" class="d-block w-100" alt="Photo 6">
+        </div>
+    </div>
+
+    <!-- Carousel controls / arrows -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#photoCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#photoCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+{% endblock %}

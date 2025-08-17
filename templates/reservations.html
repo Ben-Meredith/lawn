@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}Book a Reservation - LawnCare{% endblock %}
+{% block content %}
+<h2>Book a Reservation</h2>
+<form method="POST">
+    <div class="mb-3">
+        <label for="date" class="form-label">Select Date</label>
+        <input type="date" name="date" class="form-control" required>
+    </div>
+    <div class="mb-3">
+        <label for="time" class="form-label">Select Time</label>
+        <input type="time" name="time" class="form-control" required>
+    </div>
+    <button type="submit" class="btn btn-success">Book Now</button>
+</form>
+{% endblock %}

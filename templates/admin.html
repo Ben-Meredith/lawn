@@ -7,6 +7,27 @@
 {% block content %}
 <h2>All Reservations</h2>
 <div id="calendar"></div>
+
+<!-- Reservation Detail Modal -->
+<div class="modal fade" id="reservationModal" tabindex="-1" aria-labelledby="reservationModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="reservationModalLabel">Reservation Details</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p><strong>Name:</strong> <span id="res-name"></span></p>
+        <p><strong>Address:</strong> <span id="res-address"></span></p>
+        <p><strong>Phone:</strong> <span id="res-phone"></span></p>
+        <p><strong>Email:</strong> <span id="res-email"></span></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
 {% endblock %}
 {% block extra_scripts %}
 <!-- FullCalendar JS -->
@@ -22,6 +43,17 @@ document.addEventListener('DOMContentLoaded', function() {
             left: 'prev,next today',
             center: 'title',
             right: 'dayGridMonth,timeGridWeek,timeGridDay'
+        },
+        eventClick: function(info) {
+            // Populate modal fields
+            document.getElementById('res-name').textContent = info.event.extendedProps.name;
+            document.getElementById('res-address').textContent = info.event.extendedProps.address;
+            document.getElementById('res-phone').textContent = info.event.extendedProps.phone;
+            document.getElementById('res-email').textContent = info.event.extendedProps.email;
+
+            // Show modal
+            var myModal = new bootstrap.Modal(document.getElementById('reservationModal'));
+            myModal.show();
         }
     });
     calendar.render();

@@ -7,6 +7,38 @@
     <a href="{{ url_for('reservations') }}" class="btn btn-success btn-lg">Book a Reservation</a>
 </div>
 
+<!-- Hero Section with Background -->
+<div class="hero bg-cover text-white text-center py-5 my-5" style="background-image: url('{{ url_for('static', filename='images/hero-bg.jpg') }}');">
+    <h1 class="display-4">Yellow Jacket Lawncare</h1>
+    <p class="lead">Your trusted local lawn care company in Lexington, KY</p>
+    <a href="{{ url_for('reservations') }}" class="btn btn-lg btn-primary">Get Your Free Estimate</a>
+</div>
+
+<!-- Services Overview -->
+<div class="container my-5">
+    <h2 class="text-center mb-4">Our Services</h2>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="service-card text-center p-4 border">
+                <h4>Scheduled Lawn Maintenance</h4>
+                <p>Keep your lawn healthy and looking its best with our regular mowing and care services.</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="service-card text-center p-4 border">
+                <h4>Seasonal Lawn Services</h4>
+                <p>Prepare your lawn for every season with aeration, overseeding, and leaf cleanup.</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="service-card text-center p-4 border">
+                <h4>Landscape Design & Maintenance</h4>
+                <p>Enhance your outdoor space with our expert landscaping and maintenance services.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
 <!-- Hero Section Content Above Carousel -->
 <div class="home-content my-5">
     <h2>Yellow Jacket Lawncare</h2>
@@ -41,10 +73,10 @@
 
     <h3>Why Choose Us</h3>
     <ul>
-        <li>🐝 Locally Owned & Operated – We’re part of your community.</li>
-        <li>🌱 Focused on Lawn Health – From mowing to fertilization, we know what it takes for Lexington lawns to thrive.</li>
-        <li>⚡ Reliable & Responsive – Quick scheduling, clear communication, and dependable service.</li>
-        <li>💵 Affordable Quality – Professional care that won’t sting your wallet.</li>
+        <li> Locally Owned & Operated – We’re part of your community.</li>
+        <li> Focused on Lawn Health – From mowing to fertilization, we know what it takes for Lexington lawns to thrive.</li>
+        <li> Reliable & Responsive – Quick scheduling, clear communication, and dependable service.</li>
+        <li> Affordable Quality – Professional care that won’t sting your wallet.</li>
     </ul>
 
     <h3>Our Services Snapshot</h3>
@@ -109,5 +141,10 @@
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Next</span>
     </button>
+</div>
+
+<!-- Sticky Contact Bar -->
+<div class="contact-bar fixed-bottom bg-dark text-white text-center py-2">
+    <p>Call or Text: <strong>(123) 456-7890</strong> | <a href="mailto:info@yellowjacketlawncare.com" class="text-white">Email Us</a></p>
 </div>
 {% endblock %}

@@ -1,12 +1,70 @@
 {% extends "base.html" %}
-{% block title %}Pricing - LawnCare{% endblock %}
+{% block title %}Services - LawnCare{% endblock %}
+
 {% block content %}
-<h2>Our Pricing</h2>
-<ul class="list-group">
-    <li class="list-group-item">Front Yard Mowing: $30</li>
-    <li class="list-group-item">Back Yard Mowing: $40</li>
-    <li class="list-group-item">Full Property Mowing: $60</li>
-    <li class="list-group-item">Trimming & Edging: $15</li>
-    <li class="list-group-item">Additional Services (Cleanup, Debris Removal): $20</li>
-</ul>
+<div class="container my-5">
+
+    <h1 class="text-center mb-4">Our Services</h1>
+
+    <!-- Routine Lawn Care -->
+    <section class="section-card mb-4">
+        <h2>Routine Lawn Care</h2>
+        <ul>
+            <li><strong>Weekly lawn maintenance:</strong> Keep your lawn sharp with consistent, reliable mowing at the right height for healthy turf. Even if it's too hot, wet, or dry we can still come by and edge the property, clean the yard of debris, and blow off all walks, patios, and driveway.</li>
+            <li><strong>Edging & Trimming:</strong> Crisp, defined edges along sidewalks, driveways, and flowerbeds. String trimming around fences, trees, and other hard-to-reach spots ensures a neat, uniform finish across your entire lawn.</li>
+            <li><strong>Blowing & Cleanup:</strong> After mowing and trimming, we blow clippings off all paved areas — leaving your property spotless and ready to enjoy.</li>
+            <li><strong>Weed Control in Beds & Borders:</strong> We keep flowerbeds, mulch areas, and fence lines tidy by tackling weeds before they get out of control.</li>
+            <li><strong>Shrub & Hedge Care:</strong> Routine pruning and shaping help your shrubs and hedges stay healthy while adding curb appeal with a clean, polished look.</li>
+        </ul>
+    </section>
+
+    <!-- Commercial Property Maintenance -->
+    <section class="section-card mb-4">
+        <h2>Commercial Property Maintenance</h2>
+        <ul>
+            <li><strong>Parking Lot & Sidewalk Care:</strong> We edge, trim, and blow all hard surfaces to maintain a clean and inviting environment for visitors and staff.</li>
+            <li><strong>Shrub & Hedge Maintenance:</strong> Regular pruning and shaping of hedges, shrubs, and landscape features enhances curb appeal and keeps your property looking polished year-round.</li>
+            <li><strong>Mulch & Bed Maintenance:</strong> We refresh mulch, define bed edges, and manage weeds so planting areas stay attractive and low-maintenance.</li>
+            <li><strong>Seasonal Services:</strong> From leaf removal and overseeding to fertilization and aeration, we ensure your commercial property remains healthy and presentable through all seasons.</li>
+            <li><strong>Lawn Health Monitoring:</strong> We proactively watch for pests, diseases, and stressed turf — preventing problems before they affect the overall look of your property.</li>
+            <li><strong>Custom Maintenance Plans:</strong> Every commercial property is unique. We create tailored schedules and service plans to meet the needs of your business, large or small, ensuring consistent results and maximum impact.</li>
+        </ul>
+    </section>
+
+    <!-- Seasonal Services -->
+    <section class="section-card mb-4">
+        <h2>Seasonal Services</h2>
+        <ul>
+            <li><strong>Core Aeration:</strong> Relieve compacted soil so water, air, and nutrients reach the roots.</li>
+            <li><strong>Overseeding:</strong> Fill in bare spots and create a thicker, more resilient lawn.</li>
+            <li><strong>Fall Leaf Cleanup:</strong> Say goodbye to messy yards and protect your grass from smothering leaves.</li>
+            <li><strong>Fertilization:</strong> Our custom plans feed your lawn the nutrients it needs for year-round color and strength.</li>
+        </ul>
+    </section>
+
+    <!-- Enhancements -->
+    <section class="section-card mb-4">
+        <h2>Enhancements</h2>
+        <ul>
+            <li><strong>Mulch Installation:</strong> Freshen up beds while conserving moisture and blocking weeds.</li>
+            <li><strong>Landscape Touch-Ups:</strong> Simple improvements that keep your yard looking polished.</li>
+        </ul>
+    </section>
+
+    <!-- Closing Section -->
+    <section class="section-card text-center mb-5">
+        <p>Your lawn is unique — and so is our approach. Whether you need weekly mowing or a seasonal transformation, Yellow Jacket Lawncare is here to help.</p>
+        <a href="contact.html" class="btn btn-success">Schedule Your Service Today</a>
+        <p class="mt-3">
+            <i class="fas fa-phone"></i> (123) 456-7890 &nbsp; | &nbsp; 
+            <i class="fas fa-envelope"></i> info@yellowjacketlawncare.com
+        </p>
+    </section>
+
+    <!-- Social Media -->
+    <section class="text-center mb-5">
+        <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram fa-2x"></i></a>
+    </section>
+
+</div>
 {% endblock %}

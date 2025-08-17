@@ -34,6 +34,17 @@ body {
     padding: 0;
 }
 
+.video-row {
+    flex-wrap: wrap; /* ensures responsive wrapping on small screens */
+}
+
+.video-item {
+    width: 33%;       /* each video takes one-third of row */
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover; /* crops to fill space without distortion */
+}
+
 /* Headings */
 h1, h2 {
     text-align: center;

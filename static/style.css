@@ -209,3 +209,19 @@ form input, form select, form button {
         background-color: var(--text-color);
     }
 }
+
+/* === Carousel Button White Style === */
+.carousel-caption .btn-yellow {
+    background-color: #ffffff;   /* white */
+    color: #000000;              /* black text */
+    border: none;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+}
+
+.carousel-caption .btn-yellow:hover {
+    background-color: #f0f0f0;   /* light gray on hover */
+    color: #000000;
+}

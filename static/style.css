@@ -19,6 +19,20 @@
     text-align: center;
 }
 
+.caption-box {
+  background: rgba(0, 0, 0, 0.6); /* semi-transparent black */
+  padding: 20px;
+  border-radius: 10px;
+  display: inline-block;
+  max-width: 600px;
+  margin: auto;
+}
+
+.caption-box h1,
+.caption-box p {
+  color: #fff; /* white text for contrast */
+  margin: 10px 0;
+}
 /* remove body/html margin if necessary */
 body, html {
     margin: 0;

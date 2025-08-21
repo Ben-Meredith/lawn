@@ -21,17 +21,26 @@
 
 .caption-box {
   background: rgba(0, 0, 0, 0.6); /* semi-transparent black */
-  padding: 20px;
+  padding: 30px 20px;  /* more vertical space */
   border-radius: 10px;
   display: inline-block;
   max-width: 600px;
   margin: auto;
+  text-align: center;
 }
 
 .caption-box h1,
 .caption-box p {
   color: #fff; /* white text for contrast */
   margin: 10px 0;
+}
+
+/* Extra spacing for small screens */
+@media (max-width: 768px) {
+  .caption-box {
+    padding-top: 45px;  /* ensures top space on mobile */
+    padding-bottom: 35px;
+  }
 }
 /* remove body/html margin if necessary */
 body, html {

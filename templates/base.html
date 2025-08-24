@@ -26,7 +26,7 @@
                     <li class="nav-item"><a class="nav-link" href="{{ url_for('pricing') }}">Services</a></li>
                     <li class="nav-item"><a class="nav-link" href="{{ url_for('about') }}">About</a></li>
                     {% if session.get('user_id') %}
-                        <li class="nav-item"><a class="nav-link" href="{{ url_for('reservations') }}">Reservations</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ url_for('reservations') }}">Book a Quote</a></li>
                         <li class="nav-item"><a class="nav-link" href="{{ url_for('dashboard') }}">Dashboard</a></li>
                         {% if session.get('is_admin') %}
                             <li class="nav-item"><a class="nav-link" href="{{ url_for('admin') }}">Admin</a></li>

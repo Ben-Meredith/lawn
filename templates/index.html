@@ -22,18 +22,24 @@ html, body {
     position: relative;      /* reset any absolute offsets */
 }
 
-/* Mobile: full viewport width */
+/* Mobile: full viewport width and fixed height to prevent jump */
 @media (max-width: 768px) {
     #heroCarousel,
     #heroCarousel .carousel-inner,
-    #heroCarousel .carousel-item,
-    #heroCarousel .carousel-item img {
+    #heroCarousel .carousel-item {
         width: 100vw;  
         max-width: 100vw;
         margin: 0;
         padding: 0;
         display: block;
         position: relative;   /* fix popping during slide transition */
+        height: 50vh;          /* adjust as needed for your hero section */
+    }
+
+    #heroCarousel .carousel-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;     /* ensures image fills container without distortion */
     }
 }
 
@@ -41,7 +47,6 @@ html, body {
 #heroCarousel .carousel-inner {
     overflow: hidden;  
 }
-</style>
 
 .carousel-caption {
     left: 0;

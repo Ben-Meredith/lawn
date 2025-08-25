@@ -219,18 +219,20 @@ form input, form select, form button {
     }
 }
 
-/* === Carousel Button White Style === */
+/* === Carousel Button White Style (Updated) === */
 .carousel-caption .btn-yellow {
-    background-color: #ffffff;   /* white */
-    color: #000000;              /* black text */
-    border: none;
-    font-weight: bold;
-    padding: 10px 20px;
-    border-radius: 6px;
-    transition: background-color 0.3s ease;
+    background-color: #ffffff;   /* white background */
+    color: #222222;              /* darker gray text for contrast */
+    border: 2px solid #ffffff;   /* subtle border */
+    font-weight: 600;
+    font-size: 0.95rem;          /* slightly smaller text */
+    padding: 8px 18px;           /* more balanced spacing */
+    border-radius: 8px;          /* softer rounded corners */
+    transition: all 0.3s ease;
 }
 
 .carousel-caption .btn-yellow:hover {
-    background-color: #f0f0f0;   /* light gray on hover */
-    color: #000000;
+    background-color: #222222;   /* dark background on hover */
+    color: #ffffff;              /* white text on hover */
+    border-color: #222222;
 }

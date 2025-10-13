@@ -31,6 +31,16 @@ def init_db():
                     address TEXT,
                     FOREIGN KEY(user_id) REFERENCES users(id)
                 )''')
+    # Contact submissions table
+    c.execute('''CREATE TABLE IF NOT EXISTS contacts (
+                    id INTEGER PRIMARY KEY AUTOINCREMENT,
+                    name TEXT NOT NULL,
+                    phone TEXT NOT NULL,
+                    email TEXT NOT NULL,
+                    service_type TEXT,
+                    message TEXT,
+                    date_submitted TEXT
+                )''')
     # Create default admin if it doesn't exist
     c.execute("SELECT * FROM users WHERE email = ?", ('admin@lawncare.com',))
     if not c.fetchone():
@@ -55,6 +65,29 @@ def about():
 def pricing():
     return render_template('pricing.html')
 
+@app.route('/gallery')
+def gallery():
+    return render_template('gallery.html')
+
+@app.route('/contact', methods=['GET', 'POST'])
+def contact():
+    if request.method == 'POST':
+        name = request.form['name']
+        phone = request.form['phone']
+        email = request.form['email']
+        service_type = request.form.get('service_type', '')
+        message = request.form['message']
+        date_submitted = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+        
+        conn = sqlite3.connect(DB_NAME)
+        c = conn.cursor()
+        c.execute("INSERT INTO contacts (name, phone, email, service_type, message, date_submitted) VALUES (?,?,?,?,?,?)",
+                  (name, phone, email, service_type, message, date_submitted))
+        conn.commit()
+        conn.close()
+        return render_template('contact.html', success=True)
+    return render_template('contact.html')
+
 # Sign Up
 @app.route('/signup', methods=['GET', 'POST'])
 def signup():
@@ -75,7 +108,7 @@ def signup():
             return redirect(url_for('login'))
         except sqlite3.IntegrityError:
             conn.close()
-            return "Email already exists!"
+            return render_template('signup.html', error="Email already exists!")
     return render_template('signup.html')
 
 # Login
@@ -95,13 +128,21 @@ def login():
             session['is_admin'] = bool(user[2])
             return redirect(url_for('index'))
         else:
-            return "Invalid credentials!"
+            return render_template('login.html', error="Invalid credentials!")
     return render_template('login.html')
 
 @app.route('/logout')
 def logout():
     session.clear()
     return redirect(url_for('index'))
+
+# Get Started route - redirects based on login status
+@app.route('/get-started')
+def get_started():
+    if session.get('user_id'):
+        return redirect(url_for('reservations'))
+    else:
+        return redirect(url_for('signup'))
 
 # Reservations
 @app.route('/reservations', methods=['GET','POST'])

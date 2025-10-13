@@ -1,29 +1,39 @@
 {% extends "base.html" %}
-{% block title %}Home - Yellow Jacket Lawn Care{% endblock %}
-{% block container_class %}{% endblock %}
+{% block title %}Professional Lawn Care in Lexington, KY - Yellow Jacket Lawn Care{% endblock %}
 
 {% block content %}
-<!-- Hero Carousel - Slimmer & Full Width -->
+<!-- Hero Carousel -->
 <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
         <div class="carousel-item active">
-            <img src="{{ url_for('static', filename='images/IMG_6355 (1).webp') }}" class="d-block w-100" alt="Beautiful Lawn" loading="eager">
+            <img src="{{ url_for('static', filename='images/IMG_6355 (1).webp') }}" class="d-block w-100" alt="Professional Lawn Care" loading="eager">
             <div class="carousel-caption">
                 <div class="caption-box">
                     <h1>Professional Lawn Care</h1>
-                    <p>Reliable, fast, and affordable service for your home or business.</p>
-                    <a href="{{ url_for('get_started') }}" class="btn btn-yellow">Get Started</a>
+                    <p>Reliable, affordable service for Lexington homeowners</p>
+                    <a href="{{ url_for('get_started') }}" class="btn-hero">Get Your Free Quote</a>
                 </div>
             </div>
         </div>
 
         <div class="carousel-item">
-            <img src="{{ url_for('static', filename='images/IMG_6299.webp') }}" class="d-block w-100" alt="Freshly Cut Grass" loading="lazy">
+            <img src="{{ url_for('static', filename='images/IMG_6297.webp') }}" class="d-block w-100" alt="Trusted Local Experts" loading="lazy">
+            <div class="carousel-caption">
+                <div class="caption-box">
+                    <h1>Trusted Local Experts</h1>
+                    <p>Serving your neighborhood with pride and dedication</p>
+                    <a href="{{ url_for('get_started') }}" class="btn-hero">Get Your Free Quote</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="carousel-item">
+            <img src="{{ url_for('static', filename='images/IMG_6299.webp') }}" class="d-block w-100" alt="Book Online Today" loading="lazy">
             <div class="carousel-caption">
                 <div class="caption-box">
                     <h1>Book Online Today</h1>
-                    <p>Easy reservations and quick scheduling at your convenience.</p>
-                    <a href="{{ url_for('get_started') }}" class="btn btn-yellow">Get Started</a>
+                    <p>Easy scheduling at your convenience</p>
+                    <a href="{{ url_for('get_started') }}" class="btn-hero">Get Your Free Quote</a>
                 </div>
             </div>
         </div>
@@ -31,137 +41,220 @@
 
     <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
         <span class="carousel-control-prev-icon"></span>
-        <span class="visually-hidden">Previous</span>
     </button>
     <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
         <span class="carousel-control-next-icon"></span>
-        <span class="visually-hidden">Next</span>
     </button>
 </div>
 
-<!-- Services Overview -->
-<div class="container my-5">
-    <h2 class="text-center mb-4">Our Services</h2>
-    <div class="row">
-        <div class="col-md-4 mb-3">
-            <div class="service-card text-center p-4">
-                <h4>Scheduled Lawn Maintenance</h4>
-                <p>Keep your lawn healthy and looking its best with our regular mowing and care services.</p>
-            </div>
-        </div>
-        <div class="col-md-4 mb-3">
-            <div class="service-card text-center p-4">
-                <h4>Seasonal Lawn Services</h4>
-                <p>Prepare your lawn for every season with aeration, overseeding, and leaf cleanup.</p>
-            </div>
-        </div>
-        <div class="col-md-4 mb-3">
-            <div class="service-card text-center p-4">
-                <h4>Landscape Design & Maintenance</h4>
-                <p>Enhance your outdoor space with our expert landscaping and maintenance services.</p>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Main Content with Side Images -->
-<div class="container">
-    <div class="content-with-images">
-        <div class="content-side-image d-none d-lg-block">
-            <img src="{{ url_for('static', filename='images/IMG_6295.jpg') }}" alt="Lawn Care">
-        </div>
+<!-- Services Section -->
+<section class="services-section">
+    <div class="container">
+        <h2 class="section-title">Our Services</h2>
+        <p class="section-subtitle">Professional lawn care solutions tailored to your needs</p>
         
-        <div class="content-center">
-            <h2>Yellow Jacket Lawn Care</h2>
-            <p><strong>Residential & Small Commercial Lawn Care in Lexington, KY</strong></p>
-
-            <p>Yellow Jacket Lawn Care is your trusted local lawn care company based in Lexington, KY, specializing in mowing, fertilization, seasonal cleanups, and overall turf health. We know the unique challenges that Kentucky lawns face — from compacted clay soil to summer drought stress — and we customize our services to keep your lawn strong, green, and healthy year-round. With reliable service, sharp results, and affordable pricing, Yellow Jacket keeps your yard buzzing with life.</p>
-
-            <h3>Scheduled Lawn Maintenance in Lexington</h3>
-            <p>Keeping your lawn healthy and looking its best requires regular attention. At Yellow Jacket Lawn Care, we offer dependable weekly or biweekly lawn maintenance plans designed to save you time and deliver consistent curb appeal.</p>
-
-            <ul>
-                <li>Weekly or Biweekly Lawn Mowing</li>
-                <li>Precision Edging & String Trimming</li>
-                <li>Hedge & Shrub Trimming/Shaping</li>
-                <li>Blowing & Cleanup of Patios, Walkways, and Driveways</li>
-            </ul>
-        </div>
-        
-        <div class="content-side-image d-none d-lg-block">
-            <img src="{{ url_for('static', filename='images/IMG_6389.jpg') }}" alt="Professional Service">
-        </div>
-    </div>
-
-    <div class="content-with-images">
-        <div class="content-side-image d-none d-lg-block">
-            <img src="{{ url_for('static', filename='images/IMG_6604.jpg') }}" alt="Seasonal Services">
-        </div>
-        
-        <div class="content-center">
-            <h3>Seasonal Lawn Services in Lexington</h3>
-            <p>Lawns in central Kentucky need seasonal care to thrive. From aeration and overseeding in the fall to leaf cleanup and fertilization, we provide everything your turf needs to stay healthy and prepared for the changing seasons.</p>
-
-            <ul>
-                <li>Core Aeration & Overseeding</li>
-                <li>Fall Leaf Cleanup & Removal</li>
-                <li>Mulch Installation & Bed Redefinition</li>
-                <li>Seasonal Plantings & Landscape Touch-Ups</li>
-            </ul>
-
-            <p>No matter the season, Yellow Jacket Lawn Care has you covered. Whether it's strengthening roots in the fall, keeping weeds under control in the spring, or maintaining a sharp cut all summer long, we tailor our services to meet your lawn's needs.</p>
-        </div>
-        
-        <div class="content-side-image d-none d-lg-block">
-            <img src="{{ url_for('static', filename='images/IMG_6297.jpg') }}" alt="Quality Work">
-        </div>
-    </div>
-
-    <!-- Video Showcase -->
-    <div class="video-row">
-        <video src="{{ url_for('static', filename='copy_D1F4CF32-9571-4BF1-9E95-EBCDA3550BBF.mp4') }}" autoplay muted loop playsinline class="video-item"></video>
-        <video src="{{ url_for('static', filename='copy_413D0731-ECD7-4473-884E-BD7AA1FEF614.mp4') }}" autoplay muted loop playsinline class="video-item"></video>
-        <video src="{{ url_for('static', filename='copy_F5E81FE3-69AE-4592-9045-12B548852BD0.mp4') }}" autoplay muted loop playsinline class="video-item"></video>
-    </div>
-
-    <h3 class="text-center">Yellow Jacket Lawn Care – Lexington's Trusted Lawn Pros</h3>
-    <p class="text-center"><strong>Reliable. Efficient. Affordable.</strong> Let us keep your lawn buzzing with health and beauty.</p>
-
-    <h3>Why Choose Us</h3>
-    <ul>
-        <li><strong>Locally Owned & Operated</strong> – We're part of your community.</li>
-        <li><strong>Focused on Lawn Health</strong> – From mowing to fertilization, we know what it takes for Lexington lawns to thrive.</li>
-        <li><strong>Reliable & Responsive</strong> – Quick scheduling, clear communication, and dependable service.</li>
-        <li><strong>Affordable Quality</strong> – Professional care that won't sting your wallet.</li>
-    </ul>
-
-    <h3>Our Services Snapshot</h3>
-    <ul>
-        <li><strong>Full service mowing</strong> – Double cut lawn mowing to make sure everything is cut correctly and looking nice, including edging and trimming.</li>
-        <li><strong>Aeration</strong> – Double Aeration & Overseeding to improve health, density, and appearance of your lawn.</li>
-        <li><strong>Overseeding</strong> – Spreading premium grass seed after aeration for thicker, healthier turf.</li>
-        <li><strong>Leaf & Seasonal Cleanup</strong> – Raking, blowing, hauling debris, and mulch installation to maintain a clean, healthy yard.</li>
-    </ul>
-
-    <h3>Our Customer Promise</h3>
-    <ul>
-        <li>Show Up On Time, Every Time</li>
-        <li>Deliver Professional Results</li>
-        <li>Use the Right Techniques</li>
-        <li>Communicate Clearly</li>
-        <li>Respect Your Property</li>
-        <li>Keep Prices Fair & Transparent</li>
-    </ul>
-</div>
-{% endblock %}
-            </div>
-        </div>
-
-        <div class="carousel-item">
-            <img src="{{ url_for('static', filename='images/IMG_6297.webp') }}" class="d-block w-100" alt="Mowing Service" loading="lazy">
-            <div class="carousel-caption">
-                <div class="caption-box">
-                    <h1>Trusted Local Experts</h1>
-                    <p>Serving your neighborhood with pride and dedication.</p>
-                    <a href="{{ url_for('get_started') }}" class="btn btn-yellow">Get Started</a>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="service-card">
+                    <i class="fas fa-cut"></i>
+                    <h4>Lawn Mowing & Maintenance</h4>
+                    <p>Regular mowing, edging, and trimming to keep your lawn looking its best week after week.</p>
                 </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="service-card">
+                    <i class="fas fa-leaf"></i>
+                    <h4>Seasonal Services</h4>
+                    <p>Aeration, overseeding, leaf cleanup, and fertilization to prepare your lawn for every season.</p>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="service-card">
+                    <i class="fas fa-tree"></i>
+                    <h4>Landscape Maintenance</h4>
+                    <p>Shrub trimming, mulching, and bed maintenance to enhance your outdoor space.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- About Section -->
+<section class="content-section gray-bg">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 mb-4 mb-lg-0">
+                <div class="content-text">
+                    <h2>Yellow Jacket Lawn Care</h2>
+                    <p><strong>Residential & Commercial Lawn Care in Lexington, KY</strong></p>
+                    
+                    <p>Yellow Jacket Lawn Care is your trusted local lawn care company based in Lexington, KY. We specialize in mowing, fertilization, seasonal cleanups, and overall turf health. We know the unique challenges that Kentucky lawns face — from compacted clay soil to summer drought stress — and we customize our services to keep your lawn strong, green, and healthy year-round.</p>
+                    
+                    <p>With reliable service, sharp results, and affordable pricing, Yellow Jacket keeps your yard buzzing with life.</p>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <img src="{{ url_for('static', filename='images/IMG_6295.jpg') }}" alt="Professional Lawn Care" class="img-fluid rounded shadow">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Why Choose Us Section -->
+<section class="content-section white-bg">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 mb-4 mb-lg-0 order-lg-2">
+                <div class="content-text">
+                    <h2>Why Choose Yellow Jacket Lawn Care?</h2>
+                    
+                    <ul>
+                        <li><strong>Locally Owned & Operated</strong> – We're part of your community</li>
+                        <li><strong>Focused on Lawn Health</strong> – We know what Lexington lawns need to thrive</li>
+                        <li><strong>Reliable & Responsive</strong> – Quick scheduling and dependable service</li>
+                        <li><strong>Affordable Quality</strong> – Professional care that won't sting your wallet</li>
+                        <li><strong>Customer Satisfaction</strong> – We treat every yard as if it were our own</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-6 order-lg-1">
+                <img src="{{ url_for('static', filename='images/IMG_6389.jpg') }}" alt="Quality Service" class="img-fluid rounded shadow">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Services Detail Section -->
+<section class="content-section gray-bg">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 mb-4 mb-lg-0">
+                <div class="content-text">
+                    <h2>Scheduled Lawn Maintenance</h2>
+                    <p>Keeping your lawn healthy and looking its best requires regular attention. At Yellow Jacket Lawn Care, we offer dependable weekly or biweekly lawn maintenance plans designed to save you time and deliver consistent curb appeal.</p>
+                    
+                    <ul>
+                        <li>Weekly or Biweekly Lawn Mowing</li>
+                        <li>Precision Edging & String Trimming</li>
+                        <li>Hedge & Shrub Trimming/Shaping</li>
+                        <li>Blowing & Cleanup of Patios, Walkways, and Driveways</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <img src="{{ url_for('static', filename='images/IMG_6604.jpg') }}" alt="Lawn Maintenance" class="img-fluid rounded shadow">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Seasonal Services Section -->
+<section class="content-section white-bg">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 mb-4 mb-lg-0 order-lg-2">
+                <div class="content-text">
+                    <h2>Seasonal Lawn Services</h2>
+                    <p>Lawns in central Kentucky need seasonal care to thrive. From aeration and overseeding in the fall to leaf cleanup and fertilization, we provide everything your turf needs to stay healthy and prepared for the changing seasons.</p>
+                    
+                    <ul>
+                        <li>Core Aeration & Overseeding</li>
+                        <li>Fall Leaf Cleanup & Removal</li>
+                        <li>Mulch Installation & Bed Redefinition</li>
+                        <li>Seasonal Plantings & Landscape Touch-Ups</li>
+                    </ul>
+                    
+                    <p>No matter the season, Yellow Jacket Lawn Care has you covered.</p>
+                </div>
+            </div>
+            <div class="col-lg-6 order-lg-1">
+                <img src="{{ url_for('static', filename='images/IMG_6297.jpg') }}" alt="Seasonal Services" class="img-fluid rounded shadow">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Video Showcase -->
+<section class="video-showcase">
+    <div class="container">
+        <h2 class="section-title">See Our Work in Action</h2>
+        <p class="section-subtitle">Quality results that speak for themselves</p>
+        
+        <div class="video-grid">
+            <div class="video-item">
+                <video src="{{ url_for('static', filename='copy_D1F4CF32-9571-4BF1-9E95-EBCDA3550BBF.mp4') }}" autoplay muted loop playsinline></video>
+            </div>
+            <div class="video-item">
+                <video src="{{ url_for('static', filename='copy_413D0731-ECD7-4473-884E-BD7AA1FEF614.mp4') }}" autoplay muted loop playsinline></video>
+            </div>
+            <div class="video-item">
+                <video src="{{ url_for('static', filename='copy_F5E81FE3-69AE-4592-9045-12B548852BD0.mp4') }}" autoplay muted loop playsinline></video>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Customer Promise Section -->
+<section class="content-section white-bg">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="section-title">Our Customer Promise</h2>
+            <p class="section-subtitle">What you can expect when you choose Yellow Jacket Lawn Care</p>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-6 mb-4">
+                <div class="service-card">
+                    <i class="fas fa-clock"></i>
+                    <h4>Show Up On Time, Every Time</h4>
+                    <p>We respect your schedule and arrive when we say we will.</p>
+                </div>
+            </div>
+            <div class="col-md-6 mb-4">
+                <div class="service-card">
+                    <i class="fas fa-award"></i>
+                    <h4>Deliver Professional Results</h4>
+                    <p>Quality workmanship on every job, big or small.</p>
+                </div>
+            </div>
+            <div class="col-md-6 mb-4">
+                <div class="service-card">
+                    <i class="fas fa-tools"></i>
+                    <h4>Use the Right Techniques</h4>
+                    <p>Proven methods and professional equipment for the best results.</p>
+                </div>
+            </div>
+            <div class="col-md-6 mb-4">
+                <div class="service-card">
+                    <i class="fas fa-comments"></i>
+                    <h4>Communicate Clearly</h4>
+                    <p>Open, honest communication from quote to completion.</p>
+                </div>
+            </div>
+            <div class="col-md-6 mb-4">
+                <div class="service-card">
+                    <i class="fas fa-home"></i>
+                    <h4>Respect Your Property</h4>
+                    <p>We treat your lawn and property with the utmost care.</p>
+                </div>
+            </div>
+            <div class="col-md-6 mb-4">
+                <div class="service-card">
+                    <i class="fas fa-dollar-sign"></i>
+                    <h4>Keep Prices Fair & Transparent</h4>
+                    <p>No hidden fees, just honest pricing for quality service.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta-section">
+    <div class="container">
+        <h3>Ready to Transform Your Lawn?</h3>
+        <p>Get your free quote today and experience the Yellow Jacket difference</p>
+        <a href="{{ url_for('get_started') }}" class="btn-cta">Get Your Free Quote</a>
+    </div>
+</section>
+{% endblock %}

@@ -1,1 +1,45 @@
+{% extends "base.html" %}
+{% block title %}Gallery - Yellow Jacket Lawn Care{% endblock %}
 
+{% block content %}
+<h1 class="text-center">Our Work</h1>
+<p class="text-center">See the quality and dedication we bring to every lawn in Lexington, KY</p>
+
+<div class="gallery-grid">
+    <!-- Images -->
+    <div class="gallery-item">
+        <img src="{{ url_for('static', filename='images/IMG_6295.jpg') }}" alt="Lawn Care Work 1">
+    </div>
+    <div class="gallery-item">
+        <img src="{{ url_for('static', filename='images/IMG_6297.jpg') }}" alt="Lawn Care Work 2">
+    </div>
+    <div class="gallery-item">
+        <img src="{{ url_for('static', filename='images/IMG_6299.jpg') }}" alt="Lawn Care Work 3">
+    </div>
+    <div class="gallery-item">
+        <img src="{{ url_for('static', filename='images/IMG_6355.jpg') }}" alt="Lawn Care Work 4">
+    </div>
+    <div class="gallery-item">
+        <img src="{{ url_for('static', filename='images/IMG_6389.jpg') }}" alt="Lawn Care Work 5">
+    </div>
+    <div class="gallery-item">
+        <img src="{{ url_for('static', filename='images/IMG_6604.jpg') }}" alt="Lawn Care Work 6">
+    </div>
+    
+    <!-- Videos -->
+    <div class="gallery-item">
+        <video src="{{ url_for('static', filename='copy_D1F4CF32-9571-4BF1-9E95-EBCDA3550BBF.mp4') }}" autoplay muted loop playsinline></video>
+    </div>
+    <div class="gallery-item">
+        <video src="{{ url_for('static', filename='copy_413D0731-ECD7-4473-884E-BD7AA1FEF614.mp4') }}" autoplay muted loop playsinline></video>
+    </div>
+    <div class="gallery-item">
+        <video src="{{ url_for('static', filename='copy_F5E81FE3-69AE-4592-9045-12B548852BD0.mp4') }}" autoplay muted loop playsinline></video>
+    </div>
+</div>
+
+<div class="text-center my-5">
+    <h3>Ready to transform your lawn?</h3>
+    <a href="{{ url_for('get_started') }}" class="btn btn-success btn-lg">Get Started Today</a>
+</div>
+{% endblock %}

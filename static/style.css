@@ -74,9 +74,9 @@ body, html {
     }
 }
 
-/* ===== NAVBAR ===== */
+/* ===== NAVBAR (Yellow and Black) ===== */
 .navbar {
-    background-color: #ffffff !important;
+    background-color: var(--primary-color) !important;
     padding: 15px 20px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     position: sticky;
@@ -97,7 +97,7 @@ body, html {
 }
 
 .navbar .nav-link:hover {
-    color: var(--primary-color) !important;
+    color: var(--dark-bg) !important;
 }
 
 .navbar-toggler {
@@ -118,6 +118,16 @@ body, html {
     width: 100%;
     background-color: var(--text-color);
     border-radius: 2px;
+}
+
+.navbar .btn-success {
+    background-color: var(--dark-bg) !important;
+    color: var(--primary-color) !important;
+}
+
+.navbar .btn-success:hover {
+    background-color: #000000 !important;
+    color: #ffffff !important;
 }
 
 /* ===== HERO CAROUSEL - FULL WIDTH ===== */

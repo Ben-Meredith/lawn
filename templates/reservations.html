@@ -1,16 +1,43 @@
 {% extends "base.html" %}
-{% block title %}Book a Quote - LawnCare{% endblock %}
+{% block title %}Book a Quote - Yellow Jacket Lawn Care{% endblock %}
+
 {% block content %}
-<h2>Book a Quote</h2>
-<form method="POST">
-    <div class="mb-3">
-        <label for="date" class="form-label">Select Date</label>
-        <input type="date" name="date" class="form-control" required>
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <h2 class="text-center">Book a Quote</h2>
+        <p class="text-center">Schedule a time for us to visit your property and provide a free quote</p>
+        
+        <div class="section-card">
+            <form method="POST">
+                <div class="mb-3">
+                    <label for="date" class="form-label">Preferred Date *</label>
+                    <input type="date" name="date" id="date" class="form-control" required min="{{ today }}">
+                    <small class="text-muted">Select your preferred date for the quote visit</small>
+                </div>
+                
+                <div class="mb-3">
+                    <label for="time" class="form-label">Preferred Time *</label>
+                    <input type="time" name="time" id="time" class="form-control" required>
+                    <small class="text-muted">We'll do our best to accommodate your preferred time</small>
+                </div>
+                
+                <div class="alert" style="background-color: #fff3cd; border: 1px solid #ffc107;">
+                    <strong>Service Address:</strong> We'll use the address from your account profile.
+                    If you need to update it, please contact us.
+                </div>
+                
+                <button type="submit" class="btn btn-success btn-lg w-100">Schedule Quote</button>
+            </form>
+            
+            <div class="text-center mt-4">
+                <p><strong>Questions?</strong> Call or text us at <a href="tel:+18593617837">(859) 361-7837</a></p>
+            </div>
+        </div>
     </div>
-    <div class="mb-3">
-        <label for="time" class="form-label">Select Time</label>
-        <input type="time" name="time" class="form-control" required>
-    </div>
-    <button type="submit" class="btn btn-success">Book Now</button>
-</form>
+</div>
+
+<script>
+// Set minimum date to today
+document.getElementById('date').min = new Date().toISOString().split('T')[0];
+</script>
 {% endblock %}

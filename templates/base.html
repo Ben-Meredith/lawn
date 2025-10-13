@@ -5,13 +5,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Yellow Jacket Lawn Care{% endblock %}</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-    <!-- Optional: Bootstrap CDN for styling -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     {% block extra_head %}{% endblock %}
 </head>
 <body>
+    <!-- Top Header with Logo, Contact Info, and Socials -->
+    <div class="top-header">
+        <div class="header-logo">
+            <!-- Add your logo here -->
+            <!-- <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Yellow Jacket Lawn Care Logo"> -->
+            <h1>Yellow Jacket Lawn Care</h1>
+        </div>
+        
+        <div class="header-contact">
+            <a href="tel:+18593617837">
+                <i class="fas fa-phone"></i> (859) 361-7837
+            </a>
+            <a href="mailto:Yellowjacketlc@gmail.com">
+                <i class="fas fa-envelope"></i> Yellowjacketlc@gmail.com
+            </a>
+        </div>
+        
+        <div class="header-socials">
+            <a href="https://www.instagram.com/yellowjacketlc/" target="_blank" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.facebook.com/profile.php?id=61571101219473" target="_blank" aria-label="Facebook">
+                <i class="fab fa-facebook"></i>
+            </a>
+            <!-- Add more social links as needed -->
+        </div>
+    </div>
+
+    <!-- Navigation Bar -->
     <nav class="navbar navbar-expand-lg navbar-dark">
-        <div class="container-fluid" style="background-color: var(--primary-color) !important;">
+        <div class="container-fluid">
             <a class="navbar-brand" href="{{ url_for('index') }}">Yellow Jacket Lawn Care</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="custom-toggler">
@@ -25,6 +55,8 @@
                     <li class="nav-item"><a class="nav-link" href="{{ url_for('index') }}">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="{{ url_for('pricing') }}">Services</a></li>
                     <li class="nav-item"><a class="nav-link" href="{{ url_for('about') }}">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('gallery') }}">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('contact') }}">Contact</a></li>
                     {% if session.get('user_id') %}
                         <li class="nav-item"><a class="nav-link" href="{{ url_for('reservations') }}">Book a Quote</a></li>
                         <li class="nav-item"><a class="nav-link" href="{{ url_for('dashboard') }}">Dashboard</a></li>
@@ -40,10 +72,53 @@
             </div>
         </div>
     </nav>
-    <div class="container my-5">
+
+    <!-- Main Content -->
+    <div class="{% block container_class %}container my-5{% endblock %}">
         {% block content %}{% endblock %}
     </div>
-    <!-- Optional Bootstrap JS -->
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Yellow Jacket Lawn Care</h3>
+                <p>Professional lawn care services in Lexington, KY</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p><i class="fas fa-phone"></i> (859) 361-7837</p>
+                <p><i class="fas fa-envelope"></i> Yellowjacketlc@gmail.com</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <p><a href="{{ url_for('index') }}">Home</a></p>
+                <p><a href="{{ url_for('pricing') }}">Services</a></p>
+                <p><a href="{{ url_for('about') }}">About</a></p>
+                <p><a href="{{ url_for('gallery') }}">Gallery</a></p>
+                <p><a href="{{ url_for('contact') }}">Contact</a></p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="header-socials">
+                    <a href="https://www.instagram.com/yellowjacketlc/" target="_blank">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://www.facebook.com/profile.php?id=61571101219473" target="_blank">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 Yellow Jacket Lawn Care. All rights reserved.</p>
+        </div>
+    </footer>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     {% block extra_scripts %}{% endblock %}
 </body>

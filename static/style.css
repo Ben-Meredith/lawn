@@ -151,10 +151,10 @@ body, html {
 }
 
 .carousel-caption {
-    left: 0;
-    right: 0;
-    bottom: 50%;
-    transform: translateY(50%);
+  left: 0;
+  right: 0;
+  top: 50%; /* Position the top edge of the caption at 50% of the parent's height */
+  transform: translateY(-50%); /* Move the caption up by half of its own height */
 }
 
 .caption-box {

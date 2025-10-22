@@ -174,24 +174,26 @@
     </div>
 </section>
 
-<!-- Video Showcase -->
+<!-- Photo Showcase -->
 <section class="video-showcase">
     <div class="container">
-        <h2 class="section-title">See Our Work in Action</h2>
+        <h2 class="section-title">See Our Work</h2>
         <p class="section-subtitle">Quality results that speak for themselves</p>
         
         <div class="video-grid">
             <div class="video-item">
-                <video src="{{ url_for('static', filename='copy_D1F4CF32-9571-4BF1-9E95-EBCDA3550BBF.mp4') }}" autoplay muted loop playsinline></video>
+                <img src="{{ url_for('static', filename='images/IMG_6355 (1).webp') }}" alt="Professional Lawn Care">
             </div>
             <div class="video-item">
-                <video src="{{ url_for('static', filename='copy_413D0731-ECD7-4473-884E-BD7AA1FEF614.mp4') }}" autoplay muted loop playsinline></video>
+                <img src="{{ url_for('static', filename='images/IMG_6297.webp') }}" alt="Quality Mowing Service">
             </div>
             <div class="video-item">
-                <video src="{{ url_for('static', filename='copy_F5E81FE3-69AE-4592-9045-12B548852BD0.mp4') }}" autoplay muted loop playsinline></video>
+                <img src="{{ url_for('static', filename='images/IMG_6299.webp') }}" alt="Freshly Cut Lawn">
             </div>   
         </div>
-        <a href=https://www.yellowjacketlawncareky.com/gallery class="btn-hero">See our gallery</a>
+        <div class="text-center mt-4">
+            <a href="{{ url_for('gallery') }}" class="btn-hero">See Our Full Gallery</a>
+        </div>
     </div>
 </section>
 

@@ -17,39 +17,7 @@ body, html {
     color: var(--text-color);
 }
 
-/* ===== TOP INFO BAR (like footer style) ===== */
-.top-info-bar {
-    background-color: var(--dark-bg);
-    color: #ffffff;
-    padding: 12px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 15px;
-    font-size: 0.9rem;
-}
-
-.top-info-left,
-.top-info-right {
-    display: flex;
-    align-items: center;
-    gap: 25px;
-    flex-wrap: wrap;
-}
-
-.top-info-bar a {
-    color: #ffffff;
-    text-decoration: none;
-    transition: color 0.3s;
-}
-
-.top-info-bar a:hover {
-    color: var(--primary-color);
-}
-
-.top-info-bar i {
-    margin-right: 5px;
+/* ===== NAVBAR (Yellow and Black) ===== */
 }
 
 .social-links {
@@ -151,10 +119,10 @@ body, html {
 }
 
 .carousel-caption {
-  left: 0;
-  right: 0;
-  top: 50%; /* Position the top edge of the caption at 50% of the parent's height */
-  transform: translateY(-50%); /* Move the caption up by half of its own height */
+    left: 0;
+    right: 0;
+    bottom: 50%;
+    transform: translateY(50%);
 }
 
 .caption-box {
@@ -329,7 +297,7 @@ body, html {
     font-size: 1.3rem;
 }
 
-/* ===== VIDEO SHOWCASE ===== */
+/* ===== PHOTO/VIDEO SHOWCASE ===== */
 .video-showcase {
     padding: 80px 0;
     background-color: var(--bg-color);
@@ -349,7 +317,8 @@ body, html {
     box-shadow: 0 5px 20px rgba(0,0,0,0.15);
 }
 
-.video-item video {
+.video-item video,
+.video-item img {
     width: 100%;
     height: 300px;
     object-fit: cover;

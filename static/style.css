@@ -119,10 +119,12 @@ body, html {
 }
 
 .carousel-caption {
-    left: 0;
-    right: 0;
-    bottom: 50%;
-    transform: translateY(50%);
+  position: absolute; /* Ensure absolute positioning */
+  top: 50%; /* Position the top edge of the caption at the vertical center */
+  left: 0;
+  right: 0;
+  transform: translateY(-50%); /* Move the caption up by half its own height to center it */
+  bottom: initial; /* Remove the conflicting 'bottom' property */
 }
 
 .caption-box {

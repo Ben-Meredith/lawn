@@ -69,23 +69,8 @@ def pricing():
 def gallery():
     return render_template('gallery.html')
 
-@app.route('/contact', methods=['GET', 'POST'])
+@app.route('/contact')
 def contact():
-    if request.method == 'POST':
-        name = request.form['name']
-        phone = request.form['phone']
-        email = request.form['email']
-        service_type = request.form.get('service_type', '')
-        message = request.form['message']
-        date_submitted = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-        
-        conn = sqlite3.connect(DB_NAME)
-        c = conn.cursor()
-        c.execute("INSERT INTO contacts (name, phone, email, service_type, message, date_submitted) VALUES (?,?,?,?,?,?)",
-                  (name, phone, email, service_type, message, date_submitted))
-        conn.commit()
-        conn.close()
-        return render_template('contact.html', success=True)
     return render_template('contact.html')
 
 # Sign Up

@@ -169,19 +169,24 @@ body, html {
     box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
 
+/* Update your existing mobile media query */
 @media (max-width: 768px) {
+    /* ... other mobile styles ... */
     #heroCarousel {
         height: 50vh;
     }
-    
+
+    .caption-box {
+        padding: 20px 15px; /* Reduce padding for smaller screens */
+    }
+
+    /* Reduce font size even further if necessary */
     .caption-box h1 {
-        font-size: 2rem;
+        font-size: 1.75rem; 
     }
-    
     .caption-box p {
-        font-size: 1rem;
+        font-size: 0.9rem;
     }
-    
     .btn-hero {
         padding: 12px 30px;
         font-size: 1rem;

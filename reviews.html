@@ -1,0 +1,126 @@
+{% extends "base.html" %}
+{% block title %}Customer Reviews - Yellow Jacket Lawn Care{% endblock %}
+
+{% block content %}
+<!-- Reviews Hero -->
+<section class="services-section" style="padding: 60px 0;">
+    <div class="container">
+        <h1 class="section-title">What Our Customers Say</h1>
+        <p class="section-subtitle">Don't just take our word for it - hear from our satisfied customers in Lexington, KY</p>
+    </div>
+</section>
+
+<!-- Google Reviews CTA -->
+<section class="content-section white-bg">
+    <div class="container text-center">
+        <div class="service-card" style="background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-hover) 100%); padding: 40px;">
+            <i class="fab fa-google fa-4x mb-3" style="color: var(--text-color);"></i>
+            <h2 style="color: var(--text-color);">Leave Us a Google Review</h2>
+            <p style="color: var(--text-color); font-size: 1.1rem;">Had a great experience with Yellow Jacket Lawn Care? We'd love to hear from you!</p>
+            <a href="https://search.google.com/local/writereview?placeid={{ session.get('GOOGLE_PLACE_ID', 'YOUR_PLACE_ID') }}" target="_blank" class="btn btn-success btn-lg mt-3" style="background-color: var(--dark-bg) !important; color: var(--primary-color) !important;">
+                <i class="fab fa-google"></i> Write a Google Review
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Overall Rating Section -->
+{% if rating_info %}
+<section class="content-section gray-bg">
+    <div class="container text-center">
+        <div class="service-card">
+            <i class="fab fa-google fa-5x mb-4" style="color: #4285F4;"></i>
+            <h2>{{ rating_info.rating }} Star Rating on Google</h2>
+            <div class="text-warning mb-3" style="font-size: 2rem;">
+                {% for i in range(rating_info.rating|int) %}
+                <i class="fas fa-star"></i>
+                {% endfor %}
+                {% if rating_info.rating % 1 >= 0.5 %}
+                <i class="fas fa-star-half-alt"></i>
+                {% endif %}
+            </div>
+            <p class="mb-4">Based on {{ rating_info.total_reviews }}+ customer reviews</p>
+        </div>
+    </div>
+</section>
+{% endif %}
+
+<!-- Customer Reviews Grid -->
+<section class="content-section white-bg">
+    <div class="container">
+        <h2 class="section-title">Recent Reviews</h2>
+        
+        {% if reviews %}
+        <div class="row">
+            {% for review in reviews %}
+            <div class="col-md-6 mb-4">
+                <div class="service-card" style="height: 100%;">
+                    <div class="d-flex align-items-center mb-3">
+                        <div class="me-3">
+                            {% if review.profile_photo_url %}
+                            <img src="{{ review.profile_photo_url }}" alt="{{ review.author_name }}" class="rounded-circle" style="width: 50px; height: 50px; object-fit: cover;">
+                            {% else %}
+                            <i class="fas fa-user-circle fa-3x" style="color: var(--primary-color);"></i>
+                            {% endif %}
+                        </div>
+                        <div>
+                            <h4 class="mb-0">{{ review.author_name }}</h4>
+                            <div class="text-warning">
+                                {% for i in range(review.rating) %}
+                                <i class="fas fa-star"></i>
+                                {% endfor %}
+                                {% for i in range(5 - review.rating) %}
+                                <i class="far fa-star"></i>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                    <p>"{{ review.text }}"</p>
+                    <small class="text-muted">{{ review.relative_time_description }}</small>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        {% else %}
+        <!-- Fallback if API fails or no reviews -->
+        <div class="row">
+            <div class="col-md-6 mb-4">
+                <div class="service-card" style="height: 100%;">
+                    <div class="d-flex align-items-center mb-3">
+                        <div class="me-3">
+                            <i class="fas fa-user-circle fa-3x" style="color: var(--primary-color);"></i>
+                        </div>
+                        <div>
+                            <h4 class="mb-0">Sample Review</h4>
+                            <div class="text-warning">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p>"Excellent service! My lawn has never looked better. Max is professional, reliable, and does an amazing job every time."</p>
+                    <small class="text-muted">Posted recently</small>
+                </div>
+            </div>
+        </div>
+        <div class="alert alert-info text-center">
+            <p>Reviews are loading... Please check back soon or visit our Google Business page to see all reviews.</p>
+        </div>
+        {% endif %}
+    </div>
+</section>
+
+<!-- Review CTA Bottom -->
+<section class="cta-section">
+    <div class="container text-center">
+        <h3>Love Your Lawn?</h3>
+        <p>Share your experience and help others find quality lawn care in Lexington!</p>
+        <a href="https://search.google.com/local/writereview?placeid={{ session.get('GOOGLE_PLACE_ID', 'YOUR_PLACE_ID') }}" target="_blank" class="btn-cta">
+            <i class="fab fa-google"></i> Leave a Google Review
+        </a>
+    </div>
+</section>
+{% endblock %}

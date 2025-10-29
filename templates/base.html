@@ -31,6 +31,7 @@
                     <li class="nav-item"><a class="nav-link" href="{{ url_for('pricing') }}">Services</a></li>
                     <li class="nav-item"><a class="nav-link" href="{{ url_for('about') }}">About</a></li>
                     <li class="nav-item"><a class="nav-link" href="{{ url_for('gallery') }}">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('reviews') }}">Reviews</a></li>
                     <li class="nav-item"><a class="nav-link" href="{{ url_for('contact') }}">Contact</a></li>
                     {% if session.get('user_id') %}
                         <li class="nav-item"><a class="nav-link" href="{{ url_for('reservations') }}">Book a Quote</a></li>

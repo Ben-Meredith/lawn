@@ -2,17 +2,11 @@ from flask import Flask, render_template, request, redirect, session, url_for, j
 import sqlite3
 from werkzeug.security import generate_password_hash, check_password_hash
 from datetime import datetime
-import os
-import requests
 
 app = Flask(__name__)
-app.secret_key = os.environ.get("SECRET_KEY", "supersecretkey")  # Use environment variable in production
+app.secret_key = "supersecretkey"  # change this for production
 
 DB_NAME = 'database.db'
-
-# Google Places API configuration
-GOOGLE_API_KEY = os.environ.get("GOOGLE_API_KEY")
-GOOGLE_PLACE_ID = os.environ.get("GOOGLE_PLACE_ID")
 
 # --- Database setup ---
 def init_db():

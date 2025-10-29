@@ -10,9 +10,6 @@
     </div>
 </section>
 
-<section class="content-section gray-bg">
-</section>
-    
 <!-- Routine Lawn Care Section -->
 <section class="content-section white-bg">
     <div class="container">
@@ -96,7 +93,10 @@
                 </div>
             </div>
             <div class="col-lg-6 order-lg-1">
-                <img src="{{ url_for('static', filename='images/IMG_6604.jpg') }}" alt="Enhancements" class="img-fluid rounded shadow">
+                <video autoplay muted loop playsinline class="img-fluid rounded shadow" style="width: 100%; height: auto;">
+                    <source src="{{ url_for('static', filename='about-video.MOV') }}" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
             </div>
         </div>
     </div>

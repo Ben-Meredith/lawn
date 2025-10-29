@@ -71,33 +71,8 @@ def gallery():
 
 @app.route('/reviews')
 def reviews():
-    # Fetch Google reviews
-    google_reviews = []
-    rating_info = {}
+    return render_template('reviews.html')
     
-    if GOOGLE_API_KEY and GOOGLE_PLACE_ID:
-        try:
-            url = f"https://maps.googleapis.com/maps/api/place/details/json"
-            params = {
-                "place_id": GOOGLE_PLACE_ID,
-                "fields": "name,rating,reviews,user_ratings_total",
-                "key": GOOGLE_API_KEY
-            }
-            response = requests.get(url, params=params)
-            data = response.json()
-            
-            if data.get("status") == "OK":
-                result = data.get("result", {})
-                google_reviews = result.get("reviews", [])
-                rating_info = {
-                    "rating": result.get("rating", 0),
-                    "total_reviews": result.get("user_ratings_total", 0)
-                }
-        except Exception as e:
-            print(f"Error fetching Google reviews: {e}")
-    
-    return render_template('reviews.html', reviews=google_reviews, rating_info=rating_info)
-
 @app.route('/contact')
 def contact():
     return render_template('contact.html')
